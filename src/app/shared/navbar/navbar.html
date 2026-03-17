@@ -1,1 +1,136 @@
-<p>navbar works!</p>
+<nav class="w-full bg-[#f3f3f3] border-b border-gray-200">
+  <div class="mx-auto flex h-24 max-w-387.5 items-center justify-between px-8 lg:px-16">
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-center gap-4">
+      <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0b1730] shadow-md">
+        <!-- Icon -->
+        <svg
+          class="h-7 w-7 text-white"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          viewBox="0 0 24 24"
+        >
+          <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+          <path d="M8 7h2M12 7h2M16 7h.01M8 11h2M12 11h2M16 11h.01M8 15h2M12 15h2M16 15h.01"></path>
+        </svg>
+      </div>
+
+      <span class="text-[2.2rem] font-bold tracking-[-0.03em] text-[#0b1730]"> QueueLess </span>
+    </a>
+
+    <!-- Right side -->
+    <div class="flex items-center gap-12">
+      <!-- Links -->
+      <div class="hidden items-center gap-12 md:flex">
+        <a
+          href="#features"
+          class="text-[1.05rem] font-medium text-[#193252] transition hover:text-[#2563eb]"
+        >
+          Features
+        </a>
+
+        <a
+          href="#how-it-works"
+          class="text-[1.05rem] font-medium text-[#193252] transition hover:text-[#2563eb]"
+        >
+          How it Works
+        </a>
+      </div>
+
+      <div class="hidden h-12 w-px bg-gray-300 md:block"></div>
+
+      <!-- Auth buttons -->
+      <div class="flex items-center gap-4">
+        <!-- Login dropdown -->
+        <div class="relative" (click)="stopPropagation($event)">
+          <button
+            type="button"
+            (click)="toggleLoginDropdown()"
+            class="flex items-center gap-2 rounded-xl px-5 py-3 text-[1.05rem] font-medium text-[#193252] transition hover:bg-gray-100"
+          >
+            Log in
+            <svg
+              class="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+
+          @if (loginDropdownOpen()) {
+            <div
+              class="absolute right-0 z-50 mt-3 w-56 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl"
+            >
+              <a
+                [routerLink]="['/login']"
+                [queryParams]="{ type: 'customer' }"
+                class="block px-5 py-4 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
+                (click)="closeDropdowns()"
+              >
+                Log in as Customer
+              </a>
+              <a
+                [routerLink]="['/login']"
+                [queryParams]="{ type: 'organisation' }"
+                class="block px-5 py-4 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
+                (click)="closeDropdowns()"
+              >
+                Log in as Organisation
+              </a>
+            </div>
+          }
+        </div>
+
+        <!-- Sign up dropdown -->
+        <div class="relative" (click)="stopPropagation($event)">
+          <button
+            type="button"
+            (click)="toggleSignupDropdown()"
+            class="flex items-center gap-2 rounded-xl bg-[#2f66e8] px-6 py-3 text-[1.05rem] font-semibold text-white shadow-sm transition hover:bg-[#2458d8]"
+          >
+            Sign Up
+            <svg
+              class="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+
+          @if (signupDropdownOpen()) {
+            <div
+              class="absolute right-0 z-50 mt-3 w-56 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl"
+            >
+              <a
+                [routerLink]="['/register']"
+                [queryParams]="{ type: 'customer' }"
+                class="block px-5 py-4 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
+                (click)="closeDropdowns()"
+              >
+                Sign up as Customer
+              </a>
+              <a
+                [routerLink]="['/register']"
+                [queryParams]="{ type: 'organisation' }"
+                class="block px-5 py-4 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
+                (click)="closeDropdowns()"
+              >
+                Sign up as Organisation
+              </a>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom navy line -->
+  <!-- <div class="h-2 w-full bg-[#0b1730]"></div> -->
+</nav>

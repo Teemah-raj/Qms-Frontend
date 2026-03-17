@@ -1,1 +1,50 @@
-<p>footer works!</p>
+<footer
+  class="border-t border-[#0f2f57] bg-[#031a3a] bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size[40px_40px]"
+>
+  <div class="mx-auto max-w-7xl px-6 py-16 lg:px-12">
+    <div
+      class="flex flex-col gap-10 md:flex-row md:items-center md:justify-between"
+    >
+      <!-- Logo -->
+      <a routerLink="/" class="flex items-center gap-3">
+        <div
+          class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0b2d57]"
+        >
+          <svg
+            class="h-5 w-5 text-[#fbbf24]"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            viewBox="0 0 24 24"
+          >
+            <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+            <path
+              d="M8 7h2M12 7h2M16 7h.01M8 11h2M12 11h2M16 11h.01M8 15h2M12 15h2M16 15h.01"
+            ></path>
+          </svg>
+        </div>
+
+        <span class="text-3xl font-bold tracking-[-0.03em] text-white">
+          QueueLess
+        </span>
+      </a>
+
+      <!-- Footer links -->
+      <div class="flex flex-wrap items-center gap-6 text-sm text-[#d4dbea] md:gap-8">
+        <a routerLink=" " class="transition hover:text-white">About Us</a>
+        <a href="#features" class="transition hover:text-white">Features</a>
+        <a routerLink="/contact" class="transition hover:text-white">Contact</a>
+        <a routerLink="/privacy-policy" class="transition hover:text-white">Privacy Policy</a>
+        <a routerLink="/terms" class="transition hover:text-white">Terms of Service</a>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="mt-12 h-px w-full bg-[#0f2f57]"></div>
+
+    <!-- Bottom text -->
+    <div class="pt-10 text-center text-sm text-[#7f91ad]">
+      © 2026 QueueLess Inc. All rights reserved.
+    </div>
+  </div>
+</footer>
