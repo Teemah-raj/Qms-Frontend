@@ -9,7 +9,7 @@ import { Cta } from './cta/cta';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [],
+  imports: [Footer, Navbar, Hero, Features, HowItWorks, Cta, ],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
 })

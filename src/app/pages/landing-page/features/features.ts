@@ -19,7 +19,7 @@ interface FeatureItem {
 }
 
 @Component({
-  selector: 'app-features-section',
+  selector: 'app-features',
   standalone: true,
   imports: [CommonModule, LucideAngularModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
