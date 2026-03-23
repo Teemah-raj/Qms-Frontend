@@ -1,1 +1,139 @@
-<p>hero works!</p>
+<section
+  class="relative overflow-hidden bg-[#031633]"
+>
+  <!-- background glow -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_30%_60%,rgba(37,99,235,0.18),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(37,99,235,0.15),transparent_22%),radial-gradient(circle_at_52%_74%,rgba(245,158,11,0.18),transparent_10%)]"
+  ></div>
+
+  <!-- subtle pattern -->
+  <div
+    class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-size-42px_42px"
+  ></div>
+
+  <div
+    class="relative mx-auto grid min-h-[calc(100vh-6rem)] max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2 lg:px-12"
+  >
+    <!-- Left content -->
+    <div class="max-w-xl">
+      <div
+        class="inline-flex items-center gap-2 rounded-full border border-[#21436f] bg-[#0b2a55]/80 px-4 py-2 text-sm font-medium text-[#d9e7ff]"
+      >
+        <span class="h-2.5 w-2.5 rounded-full bg-[#f6a500]"></span>
+        The Future of Branch Banking
+      </div>
+
+      <h1
+        class="mt-8 text-5xl font-bold leading-[1.05] tracking-[-0.04em] text-white md:text-6xl"
+      >
+        Say Goodbye to
+        <span class="block text-[#4e8df7]">Long Bank Queues</span>
+      </h1>
+
+      <p class="mt-8 max-w-xl text-xl leading-10 text-[#d7e3f4]">
+        QueueLess helps banks and customers manage queues digitally. Book your
+        spot, track wait times in real-time, and walk in exactly when it's your
+        turn.
+      </p>
+
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+        <a
+          [routerLink]="['/register']"
+          [queryParams]="{ type: 'organisation' }"
+          class="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#f6a500] px-8 py-4 text-lg font-semibold text-[#0b1730] transition hover:scale-[1.02] hover:bg-[#e89d00]"
+        >
+          Get Started
+          <span class="text-2xl leading-none">→</span>
+        </a>
+
+        <a
+          href="#how-it-works"
+          class="inline-flex items-center justify-center rounded-2xl border border-[#5a6d87] px-8 py-4 text-lg font-semibold text-white transition hover:bg-white/5"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+
+    <!-- Right card -->
+    <div class="relative flex items-center justify-center">
+      <!-- blue glow -->
+      <div
+        class="absolute right-10 top-8 h-64 w-64 rounded-full bg-[#2563eb]/20 blur-3xl"
+      ></div>
+
+      <!-- yellow glow -->
+      <div
+        class="absolute bottom-10 left-6 h-24 w-24 rounded-full bg-[#f6a500]/35 blur-2xl"
+      ></div>
+
+      <div
+        class="relative w-full max-w-105 rotate-[4deg] rounded-[28px] border border-white/10 bg-[#2b3d59]/95 p-7 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-sm"
+      >
+        <!-- top yellow edge -->
+        <div class="absolute left-0 top-0 h-3 w-full rounded-t-[28px] bg-[#f6b21a]"></div>
+
+        <div class="pt-5">
+          <div class="flex items-start justify-between">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-full bg-[#355a9e]/70"
+            >
+              <svg
+                class="h-6 w-6 text-[#a9c9ff]"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="10" cy="7" r="4" />
+                <path d="M20 8v6" />
+                <path d="M23 11h-6" />
+              </svg>
+            </div>
+
+            <span
+              class="rounded-full bg-[#285c4d] px-4 py-1.5 text-sm font-semibold text-[#73e2a7]"
+            >
+              LIVE STATUS
+            </span>
+          </div>
+
+          <div class="mt-12">
+            <p class="text-lg font-semibold text-[#b8c5d8]">Your Ticket Number</p>
+            <h2 class="mt-2 text-6xl font-bold tracking-wide text-white">
+              A-042
+            </h2>
+          </div>
+
+          <div class="mt-9 space-y-5">
+            <div class="rounded-2xl bg-[#1d3353] px-5 py-5">
+              <p class="text-sm font-semibold uppercase tracking-wide text-[#7e91aa]">
+                Estimated Wait
+              </p>
+              <p class="mt-2 text-4xl font-bold text-white">12 Minutes</p>
+            </div>
+
+            <div class="rounded-2xl bg-[#1d3353] px-5 py-5">
+              <p class="text-sm font-semibold uppercase tracking-wide text-[#7e91aa]">
+                People Ahead
+              </p>
+              <p class="mt-2 text-4xl font-bold text-white">4 People</p>
+            </div>
+          </div>
+
+          <div class="mt-8 border-t border-white/10 pt-6">
+            <p class="text-sm font-medium text-[#7e91aa]">Branch</p>
+            <div class="mt-1 flex items-center justify-between">
+              <p class="text-2xl font-semibold text-white">Downtown Main</p>
+
+              <div
+                class="h-10 w-10 rounded-full border-2 border-dashed border-[#7e91aa]/70"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
