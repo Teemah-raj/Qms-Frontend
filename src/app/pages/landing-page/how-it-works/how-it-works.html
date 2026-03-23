@@ -1,1 +1,78 @@
-<p>how-it-works works!</p>
+<section id="how-it-works" class="w-full bg-white py-16" aria-labelledby="how-it-works-heading">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 id="how-it-works-heading" class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+        {{ title }}
+      </h2>
+      <p class="mt-4 text-slate-600 text-base md:text-lg">
+        {{ subtitle }}
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <ol class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12 text-center" role="list">
+
+      @for (step of steps; track step.id) {
+      <li class="flex flex-col items-center">
+
+        <!-- Icon -->
+        <div class="relative">
+          <div
+            class="h-20 w-20 rounded-full bg-slate-100 shadow-md flex items-center justify-center"
+            [attr.aria-label]="step.ariaLabel || ('Step ' + step.id)"
+          >
+
+            @switch (step.icon) {
+
+              @case ('phone') {
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-slate-500"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                    d="M3 5a2 2 0 012-2h3a1 1 0 011 1v3a1 1 0 01-.3.7l-1.2 1.2a12 12 0 005.9 5.9l1.2-1.2a1 1 0 01.7-.3h3a1 1 0 011 1v3a2 2 0 01-2 2h-1C9.163 24 0 14.837 0 4V3a2 2 0 012-2h1" />
+                </svg>
+              }
+
+              @case ('bell') {
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-slate-500"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                    d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 10-12 0v3.2c0 .5-.2.9-.6 1.3L4 17h5m6 0a3 3 0 11-6 0" />
+                </svg>
+              }
+
+              @default {
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-slate-500"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                    d="M5 13l4 4L19 7" />
+                </svg>
+              }
+            }
+
+          </div>
+
+          <!-- Number badge -->
+          <span
+            class="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-blue-600 text-white text-sm font-semibold flex items-center justify-center shadow"
+            aria-hidden="true"
+          >
+            {{ step.id }}
+          </span>
+        </div>
+
+        <!-- Text -->
+        <h3 class="mt-6 text-lg font-semibold text-slate-900">
+          {{ step.title }}
+        </h3>
+        <p class="mt-2 text-slate-600 text-sm md:text-base leading-relaxed max-w-xs">
+          {{ step.description }}
+        </p>
+
+      </li>
+      }
+    </ol>
+
+  </div>
+</section>
