@@ -1,1 +1,82 @@
-<p>register works!</p>
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo-group">
+      <span class="back-arrow">&lt;</span> 
+      <div class="logo-circle">
+        <i class="fa-regular fa-bars"></i>
+    </div>
+      <span class="logo-text">QueueLess</span>
+    </div>
+  </div>
+</header>
+
+<div class="signup-page-container">
+  @if (currentStep === 1) {
+    <div class="selection-view">
+      <h1>Welcome Back</h1>
+      <p>Select your account type to continue</p>
+      
+      <div class="type-card" (click)="selectRole('customer')">
+        <div class="icon-circle"><i class="fa-regular fa-user"></i></div>
+        <div class="text">
+          <h3>Customer</h3>
+          <p>Join queues and track your position</p>
+        </div>
+      </div>
+
+      <div class="type-card" (click)="selectRole('organisation')">
+        <div class="icon-circle"><i class="fa-regular fa-building"></i></div>
+        <div class="text">
+          <h3>Organisation</h3>
+          <p>Manage queues and serve customers</p>
+        </div>
+      </div>
+    </div>
+  } 
+
+  @else {
+    <div class="form-view">
+      <div class="tabs">
+        <button [class.active]="selectedRole === 'customer'" (click)="toggleRole('customer')">Customer</button>
+        <button [class.active]="selectedRole === 'organisation'" (click)="toggleRole('organisation')">Organisation</button>
+      </div>
+
+      <div class="form-outer-card">
+        @if (selectedRole === 'customer') {
+          <form class="registration-form">
+            <div class="input-group"><input type="text" placeholder="Name*" class="styled-input"></div>
+            <div class="input-group"><input type="email" placeholder="Email*" class="styled-input"></div>
+            <div class="input-group"><input type="password" placeholder="Password*" class="styled-input"></div>
+            <div class="input-group"><input type="tel" placeholder="Phone Number*" class="styled-input"></div>
+            <fieldset class="input-group special-group">
+              <legend>Date of Birth*</legend>
+              <input type="date" class="styled-input date-input">
+            </fieldset>
+            <div class="input-group styled-select-wrapper">
+              <select class="styled-input"><option disabled selected>Gender*</option><option>Male</option><option>Female</option></select>
+              <span class="select-arrow">&#9660;</span>
+            </div>
+            <div class="input-group"><input type="text" placeholder="Address*" class="styled-input"></div>
+            <div class="button-container">
+              <button type="submit" class="register-btn">Register Customer</button>
+            </div>
+          </form>
+        }
+
+        @else {
+          <form class="registration-form">
+            <div class="input-group"><input type="text" placeholder="Organisation Name*" class="styled-input"></div>
+            <div class="input-group"><input type="email" placeholder="Business Email*" class="styled-input"></div>
+            <div class="input-group"><input type="tel" placeholder="Business Phone*" class="styled-input"></div>
+            <div class="input-group"><input type="text" placeholder="Industry*" class="styled-input"></div>
+            <div class="input-group"><input type="url" placeholder="Website (Optional)" class="styled-input"></div>
+            <div class="input-group"><input type="text" placeholder="Headquarters Address*" class="styled-input"></div>
+            <div class="button-container">
+              <button type="submit" class="register-btn">Register Organisation</button>
+            </div>
+          </form>
+        }
+      </div>
+    </div>
+  }
+</div>
